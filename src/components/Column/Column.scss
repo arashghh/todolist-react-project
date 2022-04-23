@@ -1,0 +1,74 @@
+.column {
+  width: 14.28%;
+  color: black;
+  float: left;
+}
+
+.col {
+  height: 700px;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 0 5px;
+  background-color: #efefef;
+  overflow: scroll;
+  max-height: 85vh;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  h2 {
+    margin-top: 5px;
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+  }
+}
+
+.add-card-btn {
+  text-align: left;
+  background-color: transparent;
+  font-size: 14px;
+  margin: 5px;
+  width: 95%;
+  border: none;
+  cursor: pointer;
+  color: gray;
+  padding: 5px 10px;
+  border-radius: 6px;
+  &:hover {
+    background-color: #c2c2c2;
+  }
+}
+
+.add-card-input {
+  box-sizing: border-box;
+  width: 93%;
+  height: 60px;
+  font-size: 13px;
+  margin: 2px 0 10px 6px;
+  border-radius: 6px;
+  font-weight: 400;
+  padding: 6px;
+  background-color: white;
+  border: none;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  resize: none;
+  display: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+#add-card-submit {
+  margin: 3px 10px;
+  font-size: 13px;
+  border: none;
+  background-color: #0400ff;
+  padding: 6px 6px;
+  color: white;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  display: none;
+}
