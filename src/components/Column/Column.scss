@@ -43,8 +43,8 @@
 .add-card-input {
   box-sizing: border-box;
   width: 93%;
-  height: 60px;
-  font-size: 13px;
+  height: 45px;
+  font-size: 14px;
   margin: 2px 0 10px 6px;
   border-radius: 6px;
   font-weight: 400;
@@ -71,4 +71,19 @@
   font-weight: 600;
   cursor: pointer;
   display: none;
+  float: left;
+}
+
+#close-add-card {
+  margin: 3px 10px;
+  font-size: 13px;
+  border: none;
+  background-color: #ff0000;
+  padding: 6px 6px;
+  color: white;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  display: none;
+  float: left;
 }
