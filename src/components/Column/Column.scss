@@ -51,8 +51,7 @@
   padding: 6px;
   background-color: white;
   border: none;
-  overflow: hidden;
-  overflow-wrap: break-word;
+  overflow: auto;
   resize: none;
   display: none;
   &:focus {
@@ -72,6 +71,9 @@
   cursor: pointer;
   display: none;
   float: left;
+  &:hover {
+    background-color: #0300c7;
+  }
 }
 
 #close-add-card {
@@ -86,4 +88,7 @@
   cursor: pointer;
   display: none;
   float: left;
+  &:hover {
+    background-color: #c00000;
+  }
 }

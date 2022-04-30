@@ -8,6 +8,8 @@ export default function Column(props) {
   const [day, setDay] = useState("");
   const [tasksCounter, setTasksCounter] = useState(0);
   const [newCardTitle, setNewCardTitle] = useState("");
+  const [taskId, setTaskId] = useState(0);
+  const [inputValue, setInputValue] = useState("");
 
   useEffect(() => setDay(props.day), []);
 
@@ -19,13 +21,15 @@ export default function Column(props) {
       const newTasksState = tasks.slice();
       newTasksState.push({
         title: newCardTitle,
-        id: Math.random() * 100,
+        id: taskId,
         day: day,
+        isDone: false,
       });
       setTasks(newTasksState);
       setTasksCounter(tasksCounter + 1);
-      document.getElementById("add-card-input").value = "";
+      setInputValue("");
       setNewCardTitle("");
+      setTaskId(taskId + 1);
     }
   }
 
@@ -36,11 +40,18 @@ export default function Column(props) {
 
   function closeCard() {
     setAddCardState("none");
-    document.getElementById("add-card-input").value = "";
+    setInputValue("");
   }
 
   function submitHandler(e) {
     setNewCardTitle(e.target.value);
+    setInputValue(e.target.value);
+  }
+
+  function onClickIsDone(id) {}
+
+  function onClickRemoveItem(id) {
+    // tasks.splice(id - 1, id);
   }
 
   return (
@@ -48,16 +59,26 @@ export default function Column(props) {
       <div className='col'>
         <h2>{props.day}</h2>
         {tasks.map((item, index) => (
-          <Card title={item.title} key={item.id} id={tasksCounter} day={day} />
+          <Card
+            title={item.title}
+            key={item.id}
+            id={taskId}
+            day={day}
+            onClickRemoveItem={onClickRemoveItem}
+            onClickIsDone={onClickIsDone}
+          />
         ))}
 
-        <input
+        <textarea
+          rows='2'
+          cols='50'
           id='add-card-input'
-          type='text'
+          type='text-area'
           className='add-card-input'
           placeholder='Enter a title for this card...'
           style={{ display: addCardState }}
           onChange={submitHandler}
+          value={inputValue}
         />
 
         <button

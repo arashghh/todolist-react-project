@@ -15,6 +15,8 @@
     font-size: 14px;
     float: left;
     margin: 0;
+    overflow: auto;
+    word-wrap: break-word;
   }
 
   .deleteCardBtn {
@@ -25,15 +27,34 @@
     color: #ff0000;
     margin: 0;
     margin-right: 10px;
-    // transition: all 0.7s;
+    transition: all 0.25s;
     &:hover {
-      transform: rotate(30deg);
+      // transform: rotate(30deg);
+      transform: scale(1.3, 1.3);
+    }
+  }
+
+  .doneCardBtn {
+    visibility: hidden;
+    cursor: pointer;
+    font-size: 22px;
+    float: right;
+    color: #208c0b;
+    margin: 0;
+    margin-right: 10px;
+    padding-top: 2px;
+    transition: all 0.25s;
+    &:hover {
+      transform: scale(1.3, 1.3);
     }
   }
 
   &:hover {
     background-color: #e6e6e6;
     .deleteCardBtn {
+      visibility: visible;
+    }
+    .doneCardBtn {
       visibility: visible;
     }
   }

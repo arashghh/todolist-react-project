@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.scss";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCalendarDays } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header() {
   return (
@@ -8,7 +10,8 @@ export default function Header() {
       <ul>
         <li>
           <Link to='#' id='weekly-planner'>
-            Weekly Planner
+            <FontAwesomeIcon icon={faCalendarDays} />
+            <span> Weekly Planner</span>
           </Link>
         </li>
         <li>
@@ -21,6 +24,7 @@ export default function Header() {
           <Link to='#'>Hashtags</Link>
         </li>
       </ul>
+
       <input type='text' id='search-box' placeholder='Search...' />
     </div>
   );
