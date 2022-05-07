@@ -12,13 +12,13 @@ export default function Card(props) {
   const [cardId, setCardId] = useState("");
   useEffect(() => setCardId(`${props.day}${taskId}`), []);
 
-  function deleteCard(e) {
-    const cardId = e.target.parentElement.parentElement.id;
-    const card = document.getElementById(cardId);
-    card.remove();
+  // function deleteCard(e) {
+  //   const cardId = e.target.parentElement.parentElement.id;
+  //   const card = document.getElementById(cardId);
+  //   card.remove();
 
-    // props.onClickRemoveItem(e.target.parentElement.getAttribute("task-id"));
-  }
+  //   // props.onClickRemoveItem(e.target.parentElement.getAttribute("task-id"));
+  // }
 
   function doneTask(e) {
     setIsDone(!isDone);
@@ -57,7 +57,11 @@ export default function Card(props) {
         onClick={mmd}
       >
         <h3 style={titleStyle}>{props.title}</h3>
-        <span className='deleteCardBtn' onClick={deleteCard}>
+        <span
+          className='deleteCardBtn'
+          data-id={taskId}
+          onClick={props.onClickRemoveItem}
+        >
           ×
         </span>
         <span
